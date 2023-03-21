@@ -136,8 +136,10 @@ class OrderCallback
 	{
 		$valid = true;
 
-		$valid &= $this->getUserId() > 0;
-		$valid &= $this->getMerchantApiId() > 0;
+		$valid &= $this->getUserId() != '';
+        	$valid &= $this->getMerchantApiId() != '';
+		$valid &= $this->getMerchantId() > 0;
+		$valid &= $this->getApiId() > 0;
 		$valid &= $this->getOrderId() != '';
 		$valid &= $this->getPayCurrency() != '';
 		$valid &= $this->getPayAmount() > 0;
